@@ -1,12 +1,9 @@
 bin
-boo
 box
 cat
 cos
 cue
 day
-dis
-dit
 doc
 dot
 eat
