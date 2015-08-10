@@ -18,7 +18,7 @@ function searchDomain(lists,index,callback) {
 		}
 		else
 			if (isAvailable) {
-				console.log(colors.green(lists[index] + " is available"));
+				console.log(colors.green(lists[index] + " is available."));
 			}
 			else {
 				// console.log(colors.gray(lists[index] + " is unavailable"));
@@ -69,7 +69,7 @@ function readWords(filename,callback) {
 			for (var i = 0; i < array.length; i++) {
 				var domain = array[i];
 
-				if (domain.length) {
+				if (domain.length>0) {
 					lists.push(domain);
 				}
 			}			
@@ -97,6 +97,18 @@ readWords("Words",function(err,a)
 		});
 	}
 );
+
+// readWords("WordLists", function (error, a) {
+// 	var words = [];
+// 	for (var i = 0; i < a.length; i++) {
+
+// 		words.push(a[i] + ".com");
+// 	}
+
+// 	searchDomain(words, 0, function () {
+// 		console.log("Finish");
+// 	});
+// });
 
 	
 // var p = readWords("");
