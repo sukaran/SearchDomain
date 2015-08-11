@@ -12,6 +12,7 @@ function delay(ms) {
 
 function searchDomain(lists,index,callback) {
 
+
 	whoisAvailable(lists[index], function (err, whoisResponse, isAvailable) {
 		if (err) {
 			console.log(colors.red(err.toString()));
@@ -24,7 +25,7 @@ function searchDomain(lists,index,callback) {
 				// console.log(colors.gray(lists[index] + " is unavailable"));
 			}
 
-		if(index<lists.length)	
+		if(index<lists.length-1)	
 		{
 			searchDomain(lists,++index,callback);
 		}
@@ -102,7 +103,10 @@ readWords("Words",function(err,a)
 // 	var words = [];
 // 	for (var i = 0; i < a.length; i++) {
 
-// 		words.push(a[i] + ".com");
+// 		if (a[i].length <= 8 && a[i].length >6) {
+// 			words.push(a[i] + ".com");
+// 		}
+
 // 	}
 
 // 	searchDomain(words, 0, function () {
